@@ -4,6 +4,10 @@
  */
 package br.com.cadastroPacientes.view;
 
+import br.com.cadastroPacientes.controller.Ler;
+import br.com.cadastroPacientes.controller.Salvar;
+import br.com.cadastroPacientes.model.Paciente;
+
 /**
  *
  * @author Eduardo
@@ -40,7 +44,7 @@ public class GuiCadastroPaciente extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jComboBoxVisualizarSexo = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
-        jTextFieldVisualizarDaraNascimento = new javax.swing.JTextField();
+        jTextFieldVisualizarDataNascimento = new javax.swing.JTextField();
         jButtonVisualizarVoltarMenu = new javax.swing.JButton();
         jInternalFrameCadastrarPaciente = new javax.swing.JInternalFrame();
         jLabel1 = new javax.swing.JLabel();
@@ -50,7 +54,7 @@ public class GuiCadastroPaciente extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jComboBoxCadastrarSexo = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
-        jTextFieldCadastrarDaraNascimento = new javax.swing.JTextField();
+        jTextFieldCadastrarDataNascimento = new javax.swing.JTextField();
         jButtonCadastrarSalvar = new javax.swing.JButton();
         jButtonCadastrarCancelar = new javax.swing.JButton();
         jMenuBarMenuPrincipal = new javax.swing.JMenuBar();
@@ -83,7 +87,7 @@ public class GuiCadastroPaciente extends javax.swing.JFrame {
             }
         });
         jInternalFrameVisualizarPaciente.getContentPane().add(jTextFieldVisualizarNomePaciente);
-        jTextFieldVisualizarNomePaciente.setBounds(160, 10, 220, 20);
+        jTextFieldVisualizarNomePaciente.setBounds(160, 10, 220, 30);
 
         jLabel10.setText("Número do cartão: ");
         jInternalFrameVisualizarPaciente.getContentPane().add(jLabel10);
@@ -96,11 +100,11 @@ public class GuiCadastroPaciente extends javax.swing.JFrame {
             }
         });
         jInternalFrameVisualizarPaciente.getContentPane().add(jTextFieldVisualizarNumCard);
-        jTextFieldVisualizarNumCard.setBounds(160, 40, 220, 20);
+        jTextFieldVisualizarNumCard.setBounds(160, 40, 220, 30);
 
         jLabel11.setText("Sexo: ");
         jInternalFrameVisualizarPaciente.getContentPane().add(jLabel11);
-        jLabel11.setBounds(10, 70, 50, 20);
+        jLabel11.setBounds(10, 90, 50, 30);
 
         jComboBoxVisualizarSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino" }));
         jComboBoxVisualizarSexo.addActionListener(new java.awt.event.ActionListener() {
@@ -109,15 +113,15 @@ public class GuiCadastroPaciente extends javax.swing.JFrame {
             }
         });
         jInternalFrameVisualizarPaciente.getContentPane().add(jComboBoxVisualizarSexo);
-        jComboBoxVisualizarSexo.setBounds(50, 70, 100, 22);
+        jComboBoxVisualizarSexo.setBounds(60, 90, 100, 30);
 
         jLabel12.setText("Data de Nascimento: ");
         jInternalFrameVisualizarPaciente.getContentPane().add(jLabel12);
-        jLabel12.setBounds(160, 70, 120, 20);
+        jLabel12.setBounds(170, 90, 120, 30);
 
-        jTextFieldVisualizarDaraNascimento.setEditable(false);
-        jInternalFrameVisualizarPaciente.getContentPane().add(jTextFieldVisualizarDaraNascimento);
-        jTextFieldVisualizarDaraNascimento.setBounds(290, 70, 90, 22);
+        jTextFieldVisualizarDataNascimento.setEditable(false);
+        jInternalFrameVisualizarPaciente.getContentPane().add(jTextFieldVisualizarDataNascimento);
+        jTextFieldVisualizarDataNascimento.setBounds(290, 90, 100, 30);
 
         jButtonVisualizarVoltarMenu.setText("Voltar ao menu principal");
         jButtonVisualizarVoltarMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -126,14 +130,14 @@ public class GuiCadastroPaciente extends javax.swing.JFrame {
             }
         });
         jInternalFrameVisualizarPaciente.getContentPane().add(jButtonVisualizarVoltarMenu);
-        jButtonVisualizarVoltarMenu.setBounds(290, 110, 170, 30);
+        jButtonVisualizarVoltarMenu.setBounds(290, 140, 170, 30);
 
         jInternalFrameCadastrarPaciente.setVisible(true);
         jInternalFrameCadastrarPaciente.getContentPane().setLayout(null);
 
         jLabel1.setText("Nome do Paciente: ");
         jInternalFrameCadastrarPaciente.getContentPane().add(jLabel1);
-        jLabel1.setBounds(10, 10, 110, 16);
+        jLabel1.setBounds(20, 20, 110, 20);
 
         jTextFieldCadastrarNomePaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,11 +145,11 @@ public class GuiCadastroPaciente extends javax.swing.JFrame {
             }
         });
         jInternalFrameCadastrarPaciente.getContentPane().add(jTextFieldCadastrarNomePaciente);
-        jTextFieldCadastrarNomePaciente.setBounds(160, 10, 220, 20);
+        jTextFieldCadastrarNomePaciente.setBounds(140, 20, 260, 30);
 
         jLabel2.setText("Número do cartão: ");
         jInternalFrameCadastrarPaciente.getContentPane().add(jLabel2);
-        jLabel2.setBounds(10, 40, 110, 16);
+        jLabel2.setBounds(20, 50, 110, 40);
 
         jTextFieldCadastrarNumCard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,11 +157,11 @@ public class GuiCadastroPaciente extends javax.swing.JFrame {
             }
         });
         jInternalFrameCadastrarPaciente.getContentPane().add(jTextFieldCadastrarNumCard);
-        jTextFieldCadastrarNumCard.setBounds(160, 40, 220, 20);
+        jTextFieldCadastrarNumCard.setBounds(140, 58, 260, 30);
 
         jLabel3.setText("Sexo: ");
         jInternalFrameCadastrarPaciente.getContentPane().add(jLabel3);
-        jLabel3.setBounds(10, 70, 50, 20);
+        jLabel3.setBounds(20, 100, 50, 20);
 
         jComboBoxCadastrarSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino" }));
         jComboBoxCadastrarSexo.addActionListener(new java.awt.event.ActionListener() {
@@ -166,13 +170,13 @@ public class GuiCadastroPaciente extends javax.swing.JFrame {
             }
         });
         jInternalFrameCadastrarPaciente.getContentPane().add(jComboBoxCadastrarSexo);
-        jComboBoxCadastrarSexo.setBounds(50, 70, 100, 22);
+        jComboBoxCadastrarSexo.setBounds(70, 100, 100, 22);
 
         jLabel4.setText("Data de Nascimento: ");
         jInternalFrameCadastrarPaciente.getContentPane().add(jLabel4);
-        jLabel4.setBounds(160, 70, 120, 20);
-        jInternalFrameCadastrarPaciente.getContentPane().add(jTextFieldCadastrarDaraNascimento);
-        jTextFieldCadastrarDaraNascimento.setBounds(290, 70, 90, 22);
+        jLabel4.setBounds(190, 100, 120, 20);
+        jInternalFrameCadastrarPaciente.getContentPane().add(jTextFieldCadastrarDataNascimento);
+        jTextFieldCadastrarDataNascimento.setBounds(310, 92, 90, 30);
 
         jButtonCadastrarSalvar.setText("Salvar");
         jButtonCadastrarSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -181,7 +185,7 @@ public class GuiCadastroPaciente extends javax.swing.JFrame {
             }
         });
         jInternalFrameCadastrarPaciente.getContentPane().add(jButtonCadastrarSalvar);
-        jButtonCadastrarSalvar.setBounds(300, 110, 63, 25);
+        jButtonCadastrarSalvar.setBounds(230, 145, 63, 30);
 
         jButtonCadastrarCancelar.setText("Cancelar");
         jButtonCadastrarCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -190,7 +194,7 @@ public class GuiCadastroPaciente extends javax.swing.JFrame {
             }
         });
         jInternalFrameCadastrarPaciente.getContentPane().add(jButtonCadastrarCancelar);
-        jButtonCadastrarCancelar.setBounds(370, 110, 90, 25);
+        jButtonCadastrarCancelar.setBounds(310, 145, 90, 30);
 
         jDesktopPane.setLayer(jInternalFrameVisualizarPaciente, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane.setLayer(jInternalFrameCadastrarPaciente, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -277,6 +281,7 @@ public class GuiCadastroPaciente extends javax.swing.JFrame {
 
     private void jComboBoxCadastrarSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxCadastrarSexoActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jComboBoxCadastrarSexoActionPerformed
 
     private void jTextFieldCadastrarNumCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCadastrarNumCardActionPerformed
@@ -313,11 +318,44 @@ public class GuiCadastroPaciente extends javax.swing.JFrame {
 
     private void jButtonCadastrarSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarSalvarActionPerformed
         // TODO add your handling code here:
+        Paciente paciente = new Paciente();
+        
+        paciente.setNome(jTextFieldCadastrarNomePaciente.getText());
+        paciente.setDataNascimento(jTextFieldCadastrarDataNascimento.getText());
+        paciente.setCardNum(jTextFieldCadastrarNumCard.getText());
+        paciente.setSexo(jComboBoxCadastrarSexo.getSelectedItem().toString());
+        
+        Salvar salvar = new Salvar();
+        salvar.salvar(paciente);
+        
+        jTextFieldCadastrarDataNascimento.setText("");
+        jTextFieldCadastrarNomePaciente.setText("");
+        jTextFieldCadastrarNumCard.setText("");
+        jComboBoxCadastrarSexo.setSelectedIndex(0);
+        
+        jDesktopPane.setVisible(false);
+        jInternalFrameCadastrarPaciente.setVisible(false);
+        
     }//GEN-LAST:event_jButtonCadastrarSalvarActionPerformed
 
     private void jMenuItemVisualizarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemVisualizarPacienteActionPerformed
         // TODO add your handling code here:
+        Ler ler = new Ler();
+        Paciente p;
+        p = ler.ler();
+        
+        jTextFieldVisualizarNomePaciente.setText(p.getNome());
+        jTextFieldVisualizarNumCard.setText(p.getCardNum());
+        jTextFieldVisualizarDataNascimento.setText(p.getDataNascimento());
+        
+        if (p.getSexo().equals("Masculino.")) {
+            jComboBoxVisualizarSexo.setSelectedIndex(0);
+        } else {
+            jComboBoxVisualizarSexo.setSelectedIndex(1);
+        }
+        
         jDesktopPane.setVisible(true);
+        
         jInternalFrameVisualizarPaciente.setVisible(true);
     }//GEN-LAST:event_jMenuItemVisualizarPacienteActionPerformed
 
@@ -381,10 +419,10 @@ public class GuiCadastroPaciente extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuSair;
     private javax.swing.JMenu jMenuVisualizar;
     private javax.swing.JPanel jPanelPrincipal;
-    private javax.swing.JTextField jTextFieldCadastrarDaraNascimento;
+    private javax.swing.JTextField jTextFieldCadastrarDataNascimento;
     private javax.swing.JTextField jTextFieldCadastrarNomePaciente;
     private javax.swing.JTextField jTextFieldCadastrarNumCard;
-    private javax.swing.JTextField jTextFieldVisualizarDaraNascimento;
+    private javax.swing.JTextField jTextFieldVisualizarDataNascimento;
     private javax.swing.JTextField jTextFieldVisualizarNomePaciente;
     private javax.swing.JTextField jTextFieldVisualizarNumCard;
     // End of variables declaration//GEN-END:variables
